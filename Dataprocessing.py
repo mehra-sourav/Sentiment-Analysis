@@ -7,9 +7,9 @@ path='Datasets/txt_sentoken/pos/cv000_29590.txt'
 #FUNCTION FOR LOADING A SINGLE FILE
 def load_file(path):
   #For 1000 review data
-  #file = open(path, 'r')
+  file = open(path, 'r')
   #For 12500 review data
-  file=open(path,'r',encoding='utf-8')
+  #file=open(path,'r',encoding='utf-8')
   text=file.read()
   file.close()
   return text

@@ -5,9 +5,9 @@ from Createvocab import save_file
 
 #LOADING VOCABULARY
 #For 1000 review data
-#vocab=load_file('1000vocab.txt')
+vocab=load_file('1000vocab.txt')
 #For 12500 review data
-vocab=load_file('12500vocab.txt')
+#vocab=load_file('12500vocab.txt')
 vocab=vocab.split()
 #print(vocab)
 
@@ -33,23 +33,23 @@ def convert_files(directory):
     return lines
 
 #For 1000 review data
-#ppath='Datasets/txt_sentoken/pos/'
-#npath='Datasets/txt_sentoken/neg/'
+ppath='Datasets/txt_sentoken/pos/'
+npath='Datasets/txt_sentoken/neg/'
 
-#positive = convert_files(ppath)
-#save_file(positive, '1000positive.txt')
-#negative = convert_files(npath)
-#save_file(negative, '1000negative.txt')
+positive = convert_files(ppath)
+save_file(positive, '1000positive.txt')
+negative = convert_files(npath)
+save_file(negative, '1000negative.txt')
 
 
 #For 12500 review data
-ppath='Datasets/aclImdb/train/pos/'
-npath='Datasets/aclImdb/train/neg/'
+#ppath='Datasets/aclImdb/train/pos/'
+#npath='Datasets/aclImdb/train/neg/'
 
-positive = convert_files(ppath)
-save_file(positive, '12500positive.txt')
-negative = convert_files(npath)
-save_file(negative, '12500negative.txt')
+#positive = convert_files(ppath)
+#save_file(positive, '12500positive.txt')
+#negative = convert_files(npath)
+#save_file(negative, '12500negative.txt')
 
 
 
