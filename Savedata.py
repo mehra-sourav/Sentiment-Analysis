@@ -2,6 +2,7 @@ from os import listdir
 from Dataprocessing import load_file
 from Dataprocessing import clean_file
 from Createvocab import save_file
+import pickle as pkl
 
 #LOADING VOCABULARY
 #For 1000 review data
@@ -33,23 +34,29 @@ def convert_files(directory):
     return lines
 
 #For 1000 review data
-ppath='Datasets/txt_sentoken/pos/'
-npath='Datasets/txt_sentoken/neg/'
+#ppath='Datasets/txt_sentoken/pos/'
+#npath='Datasets/txt_sentoken/neg/'
 
-positive = convert_files(ppath)
-save_file(positive, '1000positive.txt')
-negative = convert_files(npath)
-save_file(negative, '1000negative.txt')
+#positive = convert_files(ppath)
+#save_file(positive, '1000positive.txt')
+#negative = convert_files(npath)
+#save_file(negative, '1000negative.txt')
 
 
 #For 12500 review data
-#ppath='Datasets/aclImdb/train/pos/'
-#npath='Datasets/aclImdb/train/neg/'
+#ptraindirectory='Datasets/aclImdb/train/pos/'
+#ntraindirectory='Datasets/aclImdb/train/neg/'
+#ptestdirectory='Datasets/aclImdb/test/pos/'
+#ntestdirectory='Datasets/aclImdb/test/neg/'
 
-#positive = convert_files(ppath)
-#save_file(positive, '12500positive.txt')
-#negative = convert_files(npath)
-#save_file(negative, '12500negative.txt')
+#positivetrain = convert_files(ptraindirectory)
+#save_file(positivetrain, '12500positivetrain.txt')
+#negativetrain = convert_files(ntraindirectory)
+#save_file(negativetrain, '12500negativetrain.txt')
+#positivetest = convert_files(ptestdirectory)
+#save_file(positivetest, '12500positivetest.txt')
+#negativetest = convert_files(ntestdirectory)
+#save_file(negativetest, '12500negativetest.txt')
 
 
 
