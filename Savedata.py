@@ -6,9 +6,9 @@ import pickle as pkl
 
 #LOADING VOCABULARY
 #For 1000 review data
-vocab=load_file('1000vocab.txt')
+##vocab=load_file('1000vocab.txt')
 #For 12500 review data
-#vocab=load_file('12500vocab.txt')
+vocab=load_file('12500vocab.txt')
 vocab=vocab.split()
 #print(vocab)
 
@@ -34,33 +34,65 @@ def convert_files(directory):
     return lines
 
 #For 1000 review data
-#ppath='Datasets/txt_sentoken/pos/'
-#npath='Datasets/txt_sentoken/neg/'
+##ptrainpath='Datasets/txt_sentoken/train/pos/'
+##ntrainpath='Datasets/txt_sentoken/train/neg/'
+##ptestpath='Datasets/txt_sentoken/test/pos/'
+##ntestpath='Datasets/txt_sentoken/test/neg/'
 
-#positive = convert_files(ppath)
-#save_file(positive, '1000positive.txt')
-#negative = convert_files(npath)
-#save_file(negative, '1000negative.txt')
+##Positivetrain = convert_files(ptrainpath)
+##save_file(Positivetrain, '1000positivetrain.txt')
+##Negativetrain = convert_files(ntrainpath)
+##save_file(Negativetrain, '1000negativetrain.txt')
+##Train_x = Positivetrain + Negativetrain
+##Train_y = [1] * len(Positivetrain) + [0] * len(Negativetrain)
+
+##Positivetest=convert_files(ptestpath)
+##save_file(Positivetest,'1000positivetest.txt')
+##Negativetest=convert_files(ntestpath)
+##save_file(Negativetest,'1000negativetest.txt')
+##Test_x=Positivetest+Negativetest
+##Test_y=[1]*len(Positivetest)+[0]*len(Negativetest)
+
+##f=open('1000train.pkl','wb')
+##pkl.dump((Train_x,Train_y),f,-1)
+##f.close()
+
+##f=open('1000test.pkl','wb')
+##pkl.dump((Test_x,Test_y),f,-1)
+##f.close()
 
 
 #For 12500 review data
-#ptraindirectory='Datasets/aclImdb/train/pos/'
-#ntraindirectory='Datasets/aclImdb/train/neg/'
-#ptestdirectory='Datasets/aclImdb/test/pos/'
-#ntestdirectory='Datasets/aclImdb/test/neg/'
+ptraindirectory='Datasets/aclImdb/train/pos/'
+ntraindirectory='Datasets/aclImdb/train/neg/'
+ptestdirectory='Datasets/aclImdb/test/pos/'
+ntestdirectory='Datasets/aclImdb/test/neg/'
 
-#positivetrain = convert_files(ptraindirectory)
-#save_file(positivetrain, '12500positivetrain.txt')
-#negativetrain = convert_files(ntraindirectory)
-#save_file(negativetrain, '12500negativetrain.txt')
-#positivetest = convert_files(ptestdirectory)
-#save_file(positivetest, '12500positivetest.txt')
-#negativetest = convert_files(ntestdirectory)
-#save_file(negativetest, '12500negativetest.txt')
+positivetrain = convert_files(ptraindirectory)
+save_file(positivetrain, '12500positivetrain.txt')
+negativetrain = convert_files(ntraindirectory)
+save_file(negativetrain, '12500negativetrain.txt')
+train_x=positivetrain+negativetrain
+train_y=[1]*len(positivetrain) + [0]*len(negativetrain)
+
+positivetest = convert_files(ptestdirectory)
+save_file(positivetest, '12500positivetest.txt')
+negativetest = convert_files(ntestdirectory)
+save_file(negativetest, '12500negativetest.txt')
+test_x=positivetest+negativetest
+test_y=[1]*len(positivetest)+[0]*len(negativetest)
+
+f=open('12500train.pkl','wb')
+pkl.dump((train_x,train_y),f,-1)
+f.close()
+
+f=open('12500test.pkl','wb')
+pkl.dump((test_x,test_y),f,-1)
+f.close()
 
 
 
 
-print("Positive and negative files created")
+print("Positive and negative files created text and .pkl files created.")
 
 

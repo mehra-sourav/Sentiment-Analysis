@@ -26,41 +26,37 @@ def save_file(lines,file):
     data='\n'.join(lines)
     #print(data)
     #For 1000 review data
-    doc=open(file,'w')
+    ##doc=open(file,'w')
     #For 12500 review data
-    #doc = open(file, 'w',encoding='utf-8')
+    doc = open(file, 'w',encoding='utf-8')
     doc.write(data)
     doc.close()
 
 	
 #For 1000 review data
-#pdirectory='Datasets/txt_sentoken/pos/'
-#ndirectory='Datasets/txt_sentoken/neg/'
+##pdirectory='Datasets/txt_sentoken/train/pos/'
+##ndirectory='Datasets/txt_sentoken/train/neg/'
 
-vocab = Counter()
-load_files(pdirectory, vocab)
-load_files(ndirectory, vocab)
+##vocab = Counter()
+##load_files(pdirectory, vocab)
+##load_files(ndirectory, vocab)
 
 # print("Original Length of Vocab:-%d"%len(vocab))
 # print("50 Most Common Vocab words:-")
 # print(vocab.most_common(50))
-tokens=[w for w,c in vocab.items() if c>=5]
+##tokens=[w for w,c in vocab.items() if c>=5]
 #print("Length of token greater than 5:-%d"%len(tokens))
 #For 1000 review data
-save_file(tokens,'1000vocab.txt')
+##save_file(tokens,'1000vocab.txt')
 
 
 #For 12500 review data
-#ptraindirectory='Datasets/aclImdb/train/pos/'
-#ntraindirectory='Datasets/aclImdb/train/neg/'
-#ptestdirectory='Datasets/aclImdb/test/pos/'
-#ntestdirectory='Datasets/aclImdb/test/neg/'
+ptraindirectory='Datasets/aclImdb/train/pos/'
+ntraindirectory='Datasets/aclImdb/train/neg/'
 
 vocab = Counter()
 load_files(ptraindirectory, vocab)
 load_files(ntraindirectory, vocab)
-load_files(ptestdirectory,vocab)
-load_files(ntestdirectory,vocab)
 
 #print("Original Length of Vocab:-%d"%len(vocab))
 #print("50 Most Common Vocab words:-")
@@ -68,6 +64,6 @@ load_files(ntestdirectory,vocab)
 tokens=[w for w,c in vocab.items() if c>=5]
 #print("Length of token greater than 5:-%d"%len(tokens))
 #For 125000 review data
-#save_file(tokens,'12500vocab.txt')
+save_file(tokens,'12500vocab.txt')
 
 print("Add File to Vocab and Save File functions created.Vocab created.")
