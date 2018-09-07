@@ -1,5 +1,5 @@
 import sklearn
-
+import pickle as pkl
 #For 1000 review data
 #f=open('1000train.pkl','rb')
 #train=pkl.load(f)
@@ -17,4 +17,5 @@ f.close()
 f=open('12500test.pkl','rb')
 test=pkl.load(f)
 f.close()
+print(train[1])
 
