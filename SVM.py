@@ -17,5 +17,5 @@ f.close()
 f=open('12500test.pkl','rb')
 test=pkl.load(f)
 f.close()
-print(train[1])
+print(train)
 

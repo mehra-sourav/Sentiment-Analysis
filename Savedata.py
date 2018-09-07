@@ -46,12 +46,16 @@ def convert_files(directory):
 ##Train_x = Positivetrain + Negativetrain
 ##Train_y = [1] * len(Positivetrain) + [0] * len(Negativetrain)
 
+##save_file(Train_x,"1000train.txt")
+
 ##Positivetest=convert_files(ptestpath)
 ##save_file(Positivetest,'1000positivetest.txt')
 ##Negativetest=convert_files(ntestpath)
 ##save_file(Negativetest,'1000negativetest.txt')
 ##Test_x=Positivetest+Negativetest
 ##Test_y=[1]*len(Positivetest)+[0]*len(Negativetest)
+
+##save_file(Test_x,"1000test.txt")
 
 ##f=open('1000train.pkl','wb')
 ##pkl.dump((Train_x,Train_y),f,-1)
@@ -75,6 +79,8 @@ save_file(negativetrain, '12500negativetrain.txt')
 train_x=positivetrain+negativetrain
 train_y=[1]*len(positivetrain) + [0]*len(negativetrain)
 
+save_file(train_x,"12500train.txt")
+
 positivetest = convert_files(ptestdirectory)
 save_file(positivetest, '12500positivetest.txt')
 negativetest = convert_files(ntestdirectory)
@@ -82,9 +88,12 @@ save_file(negativetest, '12500negativetest.txt')
 test_x=positivetest+negativetest
 test_y=[1]*len(positivetest)+[0]*len(negativetest)
 
+save_file(test_x,"12500test.txt")
+
 f=open('12500train.pkl','wb')
 pkl.dump((train_x,train_y),f,-1)
 f.close()
+
 
 f=open('12500test.pkl','wb')
 pkl.dump((test_x,test_y),f,-1)
