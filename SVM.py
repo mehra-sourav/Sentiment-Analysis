@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score as ACC
 from sklearn import svm as SVM
-import numpy as np
+#import numpy as np
 from Dataprocessing import words
 import pickle as pkl
 #For 1000 review data
@@ -25,7 +25,6 @@ f.close()
 
 vect=TfidfVectorizer()
 
-#vect=TfidfVectorizer(min_df=5, max_df=0.8, sublinear_tf=True, use_idf=True)
 trainfeat=vect.fit_transform(train[0])
 testfeat=vect.transform(test[0])
 
