@@ -3,7 +3,6 @@ from os import listdir
 import string
 print("In Dataprocessing.py")
 print("Creating Load_File and Create_File functions")
-import string
 path='Datasets/txt_sentoken/train/pos/cv000_29590.txt'
 
 #FUNCTION FOR LOADING A SINGLE FILE
@@ -52,7 +51,7 @@ def words(sentences):
 
     for text in sentences:
         text = text.replace('<br />', ' ')
-        text = text.replace('--', ' ').replace('\'s', '')
+        #text = text.replace('--', ' ').replace('\'s', '')
         text = text.translate(trans)
         text = ' '.join([w for w in text.split() if w not in stop])
 
@@ -72,7 +71,9 @@ def words(sentences):
 #directory='Datasets/txt_sentoken/pos'
 #text=load_file(path)
 #print(text)
+#print(type(text))
 #tokens=clean_file(text)
+#print(tokens)
 #print(type(tokens))
 
 #print(string.punctuation)

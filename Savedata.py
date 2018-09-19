@@ -5,7 +5,7 @@ from Createvocab import save_file
 import pickle as pkl
 
 print("In Savedata.py")
-print("Creating Positive and negative files created, Text and .pkl files")
+print("Creating .pkl files")
 
 #LOADING VOCABULARY
 #For 1000 review data
@@ -102,6 +102,6 @@ f=open('12500test.pkl','wb')
 pkl.dump((test_x,test_y),f,-1)
 f.close()
 
-print("Positive and negative files, Text and .pkl files created\n")
+print(".pkl files created\n")
 
 
