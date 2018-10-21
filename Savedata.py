@@ -82,7 +82,6 @@ negativetrain = convert_files(ntraindirectory)
 ###save_file(negativetrain, '12500negativetrain.txt')
 train_x=positivetrain+negativetrain
 train_y=[1]*len(positivetrain) + [0]*len(negativetrain)
-
 ###save_file(train_x,"12500train.txt")
 
 positivetest = convert_files(ptestdirectory)
