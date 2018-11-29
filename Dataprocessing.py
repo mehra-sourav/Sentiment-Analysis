@@ -1,5 +1,6 @@
 from nltk.corpus import stopwords
 from os import listdir
+from io import open
 import string
 print("In Dataprocessing.py")
 print("Creating Load_File and Create_File functions")
@@ -7,10 +8,10 @@ path='Datasets/txt_sentoken/train/pos/cv000_29590.txt'
 
 #FUNCTION FOR LOADING A SINGLE FILE
 def load_file(path):
-  #For 1000 review data
-  ##file = open(path, 'r')
-  #For 12500 review data
-  file=open(path,'r',encoding='utf-8')
+  #For 1600 review data
+  #file = open(path, 'r')
+  #For 10000 and 25000 review data
+  file = open(path, 'r', encoding='utf-8')
 
   text=file.read()
   file.close()
@@ -63,63 +64,8 @@ def words(sentences):
         text = ' '.join(words)
         result.append(text.strip())
     return result
-#a=['This','is','nice']
-#b=words(a)
-#print(b)
 
 
-#directory='Datasets/txt_sentoken/pos'
-#text=load_file(path)
-#print(text)
-#print(type(text))
-#tokens=clean_file(text)
-#print(tokens)
-#print(type(tokens))
-
-#print(string.punctuation)
-
-
-
-def words1(sentences):
-    result = []
-    #stop = stopwords.words('english')
-    trash_characters = string.punctuation+'0123456789'
-    trans = str.maketrans(trash_characters, ' '*len(trash_characters))
-
-    for text in sentences:
-        text = text.replace('<br />', ' ')
-        text = text.replace('--', ' ').replace('\'s', '')
-        text = text.translate(trans)
-        text = ' '.join([w for w in text.split()])# if w not in stop])
-
-        words = []
-        for word in text.split():
-            word = word.lstrip('-\'\"').rstrip('-\'\"')
-            #if len(word)>2 :
-            words.append(word.lower())
-        text = ' '.join(words)
-        result.append(text.strip())
-    return result
 print("Load_File and Create_File functions created\n")
-#a='This is the exciting! news!. I !was travelling with my parents on a sunny afternoon. Suddenly, we got powers.'
-#b=a.split()
-#print(b)
 
-stop = stopwords.words('english')
-def Puncount(tokens):
-    token=words1(tokens)
-    coun=0
-    #print(token)
-    for wor in token:
-     if wor in stop:
-        coun+=1
-    return coun
-
-#print("stop words="+str(Puncount(b)))
-#for word in b:
-
-#print(stopwords.words('english'))
-
-
-#print("Second time"+b)
 
